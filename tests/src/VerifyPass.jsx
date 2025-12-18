@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 function VerifyPass() {
-    //const { id } = useParams();
+    const { id } = useParams();
     const [status, setStatus] = useState("Vérification en cours...");
     const [error, setError] = useState(null);
     const [response, setResponse] = useState(null);
@@ -17,7 +17,7 @@ function VerifyPass() {
         console.log("TOKEN VALUE:", token, typeof token);
 
         fetch(
-            `https://intramuscular-angelena-subdendroid.ngrok-free.dev/api/pass/verify-pass/6941cc25a8bee16d89d9cd26`,
+            `https://intramuscular-angelena-subdendroid.ngrok-free.dev/api/pass/verify-pass/${id}`,
             {
                 headers: {
                     Authorization: `Bearer ${token}`,
@@ -39,7 +39,7 @@ function VerifyPass() {
                 console.error(error);
                 setError(error.message);
             });
-    }, []);
+    }, [id]);
 
 
     if (error) return <p>Error : {error}, Token : {token}, typeof : {typeof token}</p>;
