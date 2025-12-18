@@ -86,6 +86,7 @@ function Login() {
                 required
             />
 
+            <p>Response : {response}</p>
             {error && <p style={styles.error}>{error}</p>}
 
             <button type="submit" disabled={loading}>
