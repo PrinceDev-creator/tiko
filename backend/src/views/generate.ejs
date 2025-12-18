@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générer QR Code</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>📱 Générer un QR Code</h1>
+
+        <% if (success && qrCode) { %>
+            <!-- QR CODE GÉNÉRÉ -->
+            <div class="success">
+                <h3>✅ QR Code généré avec succès !</h3>
+
+                <div class="qr-container">
+                    <img src="<%= qrCode %>" alt="QR Code" class="qr-image" id="qrImage">
+                    <div class="qr-actions">
+                        <button onclick="downloadQRCode()" class="btn btn-download">
+                            📥 Télécharger
+                        </button>
+                        <button onclick="window.print()" class="btn btn-print">
+                            🖨️ Imprimer
+                        </button>
+                    </div>
+                </div>
+
+                <div class="verification-info">
+                    <p><strong>URL de vérification:</strong></p>
+                    <code class="verification-url" id="verificationUrl"><%= verificationUrl %></code>
+                    <button onclick="copyToClipboard()" class="btn btn-copy">
+                        📋 Copier l'URL
+                    </button>
+                </div>
+
+                <% if (object) { %>
+                    <div class="object-info">
+                        <h4>📋 Informations de l'objet:</h4>
+                        <div class="object-details">
+                            <p><strong>Nom:</strong>
+                                <%= object.name %>
+                            </p>
+                            <p><strong>Description:</strong>
+                                <%= object.description %>
+                            </p>
+                            <p><strong>Fabricant:</strong>
+                                <%= object.manufacturer %>
+                            </p>
+                            <p><strong>Date de production:</strong>
+                                <%= new Date(object.productionDate).toLocaleDateString('fr-FR') %>
+                            </p>
+                            <p><strong>Date d'expiration:</strong>
+                                <%= new Date(object.expiryDate).toLocaleDateString('fr-FR') %>
+                            </p>
+                            <p><strong>ID:</strong> <code><%= object.id %></code></p>
+                        </div>
+                    </div>
+                    <% } %>
+
+                        <div class="action-buttons">
+                            <a href="/generate" class="btn btn-primary">🔄 Nouveau QR Code</a>
+                            <a href="/" class="btn btn-secondary">🏠 Accueil</a>
+                        </div>
+            </div>
+
+            <% } else { %>
+                <!-- FORMULAIRE -->
+                <form method="POST" class="form">
+                    <div class="form-group">
+                        <label for="objectName">Nom de l'objet *</label>
+                        <input type="text" id="objectName" name="objectName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Description *</label>
+                        <textarea id="description" name="description" placeholder="Décrivez l'objet..."
+                            required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="manufacturer">Fabricant *</label>
+                        <input type="text" id="manufacturer" name="manufacturer" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="productionDate">Date de production *</label>
+                        <input type="date" id="productionDate" name="productionDate" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="expiryDate">Date d'expiration *</label>
+                        <input type="date" id="expiryDate" name="expiryDate" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-generate">🚀 Générer QR Code</button>
+                </form>
+
+                <% if (error) { %>
+                    <div class="error">
+                        ❌ <%= error %>
+                    </div>
+                    <% } %>
+
+                        <a href="/" class="btn btn-secondary">🏠 Retour à l'accueil</a>
+                        <% } %>
+    </div>
+
+    <script>
+        function downloadQRCode() {
+            const qrImage = document.getElementById('qrImage');
+            if (!qrImage) {
+                alert('QR Code non trouvé');
+                return;
+            }
+
+            const link = document.createElement('a');
+            // Récupérer le nom depuis l'élément HTML plutôt que depuis EJS
+            const objectNameElement = document.querySelector('.object-details p:first-child');
+            let objectName = 'qr-code';
+
+            if (objectNameElement) {
+                const nameText = objectNameElement.textContent;
+                const nameMatch = nameText.match(/Nom:\s*(.+)/);
+                if (nameMatch && nameMatch[1]) {
+                    objectName = nameMatch[1].trim();
+                }
+            }
+
+            // Nettoyer le nom pour le fichier
+            const cleanName = objectName.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase();
+            link.download = `qr-code-${cleanName}.png`;
+            link.href = qrImage.src;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        function copyToClipboard() {
+            const urlElement = document.getElementById('verificationUrl');
+            if (!urlElement) {
+                alert('URL non trouvée');
+                return;
+            }
+
+            const url = urlElement.textContent;
+
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(url).then(() => {
+                    alert('✅ URL copiée dans le presse-papier !');
+                }).catch(() => {
+                    fallbackCopyToClipboard(url);
+                });
+            } else {
+                fallbackCopyToClipboard(url);
+            }
+        }
+
+        function fallbackCopyToClipboard(text) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            textArea.style.position = 'fixed';
+            textArea.style.left = '-999999px';
+            textArea.style.top = '-999999px';
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+
+            try {
+                document.execCommand('copy');
+                alert('✅ URL copiée dans le presse-papier !');
+            } catch (err) {
+                console.error('Fallback copy failed: ', err);
+                alert('❌ Erreur lors de la copie');
+            }
+
+            document.body.removeChild(textArea);
+        }
+    </script>
+</body>
+
+</html>

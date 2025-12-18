@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vérification</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="verification-result <%= valid ? 'valid' : 'invalid' %>">
+            <% if (valid) { %>
+                <div class="status-icon">✅</div>
+                <h1>Valide</h1>
+                <% } else { %>
+                    <div class="status-icon">❌</div>
+                    <h1>Non Valide</h1>
+                    <% } %>
+
+                        <p class="message">
+                            <%= message %>
+                        </p>
+
+                        <% if (object) { %>
+                            <div class="object-details">
+                                <h3>Détails de l'objet:</h3>
+                                <p><strong>Nom:</strong>
+                                    <%= object.name %>
+                                </p>
+                                <p><strong>Description:</strong>
+                                    <%= object.description %>
+                                </p>
+                                <p><strong>Fabricant:</strong>
+                                    <%= object.manufacturer %>
+                                </p>
+                                <p><strong>Date de production:</strong>
+                                    <%= new Date(object.productionDate).toLocaleDateString('fr-FR') %>
+                                </p>
+                                <p><strong>Date d'expiration:</strong>
+                                    <%= new Date(object.expiryDate).toLocaleDateString('fr-FR') %>
+                                </p>
+                                <p><strong>Date actuelle:</strong>
+                                    <%= currentDate %>
+                                </p>
+                            </div>
+                            <% } %>
+        </div>
+
+        <a href="/" class="btn">Retour à l'accueil</a>
+    </div>
+</body>
+
+</html>
