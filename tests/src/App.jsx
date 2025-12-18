@@ -11,7 +11,7 @@ function App() {
                 size={250}
             /> */}
             <QRCodeCanvas
-                value="tiko-699g-1mkrk1hdm-princedev-creators-projects.vercel.app/api/verify-pass/6941cc25a8bee16d89d9cd26"
+                value="https://tiko-699g-1mkrk1hdm-princedev-creators-projects.vercel.app/api/verify-pass/6941cc25a8bee16d89d9cd26"
                 size={250}
             />
 
