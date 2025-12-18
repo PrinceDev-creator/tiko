@@ -6,7 +6,7 @@ function VerifyPass() {
     const [status, setStatus] = useState("Vérification en cours...");
     const [error, setError] = useState(null);
     const [response, setResponse] = useState(null);
-    const [token, setToken] = useState(localStorage.getItem("token"))
+    const token = useState(localStorage.getItem("token"))
 
 
     useEffect(() => {
