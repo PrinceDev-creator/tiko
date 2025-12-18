@@ -19,7 +19,7 @@ function Login() {
 
         try {
             const response = await fetch(
-                "https://tiko-699g-1mkrk1hdm-princedev-creators-projects.vercel.app/api/auth/login",
+                "https://intramuscular-angelena-subdendroid.ngrok-free.dev/api/auth/login",
                 {
                     method: "POST",
                     headers: {
