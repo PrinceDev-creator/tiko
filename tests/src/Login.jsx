@@ -18,7 +18,7 @@ function Login() {
 
         try {
             const response = await fetch(
-                "https://192.168.1.196:3000/api/auth/login",
+                "tiko-699g-1mkrk1hdm-princedev-creators-projects.vercel.app/api/auth/login",
                 {
                     method: "POST",
                     headers: {
