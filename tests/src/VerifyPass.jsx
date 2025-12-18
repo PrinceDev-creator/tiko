@@ -20,6 +20,7 @@ function VerifyPass() {
             `https://intramuscular-angelena-subdendroid.ngrok-free.dev/api/pass/verify-pass/${id}`,
             {
                 headers: {
+                    "Content-Type": "application/json",
                     Authorization: `Bearer ${token}`,
                 },
             }
