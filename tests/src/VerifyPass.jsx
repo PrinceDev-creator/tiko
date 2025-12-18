@@ -37,7 +37,7 @@ function VerifyPass() {
             });
     }, [id, token]);
 
-    if (error) return <p>Error : {error}</p>;
+    if (error) return <p>Error : {error} *** Token : {token}</p>;
     if (!response) return <p>Chargement...</p>;
 
     return (
