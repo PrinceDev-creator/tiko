@@ -33,8 +33,8 @@ function VerifyPass() {
                     setStatus("❌ Pass invalide");
                 }
             })
-            .catch(() => {
-                setError("Erreur serveur");
+            .catch((error) => {
+                setError("Erreur serveur: ", error);
             });
     }, [id, token]);
 
