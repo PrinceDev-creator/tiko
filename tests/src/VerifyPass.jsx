@@ -16,7 +16,7 @@ function VerifyPass() {
         //     return;
         // }
 
-        fetch("https://tiko-699g-1mkrk1hdm-princedev-creators-projects.vercel.app/apipass/verify-pass/6941cc25a8bee16d89d9cd26", {
+        fetch("https://intramuscular-angelena-subdendroid.ngrok-free.dev/api/pass/verify-pass/6941cc25a8bee16d89d9cd26", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
