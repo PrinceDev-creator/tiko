@@ -42,8 +42,7 @@ function VerifyPass() {
     }, [id]);
 
 
-    if (error) return <p>Error : {error}</p>;
-    if (token) return <p>Token : {token}, typeof : {typeof token}</p>
+    if (error) return <p>Error : {error}, Token : {token}, typeof : {typeof token}</p>;
     if (!response) return <p>Chargement...</p>;
 
     return (
