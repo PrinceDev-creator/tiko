@@ -44,5 +44,8 @@ exports.login = (req, res, next) => {
                 res.status(404).json({ message: 'Informations incorrectes' })
             }
         })
-        .catch(error => res.status(500).json({ error: error }))
+        .catch((error) => {
+            console.log('error: ', error)
+            res.status(500).json({ error: error })
+        })
 }
