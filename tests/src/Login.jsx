@@ -10,6 +10,7 @@ function Login() {
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
+    const [response, setResponse] = useState(null)
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -27,6 +28,8 @@ function Login() {
                     body: JSON.stringify({ email, password }),
                 }
             );
+
+            setResponse(response);
 
             if (!response.ok) {
                 throw new Error("Identifiants invalides");
