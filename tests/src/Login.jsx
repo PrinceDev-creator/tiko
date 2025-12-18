@@ -10,7 +10,7 @@ function Login() {
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
-    const [response, setResponse] = useState(null)
+    // const [response, setResponse] = useState(null)
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -29,7 +29,7 @@ function Login() {
                 }
             );
 
-            setResponse(response);
+            // setResponse(response);
 
             if (!response.ok) {
                 throw new Error("Identifiants invalides");
@@ -89,7 +89,7 @@ function Login() {
                 required
             />
 
-            <p>Response : {response}</p>
+            {/* <p>Response : {response}</p> */}
             {error && <p style={styles.error}>{error}</p>}
 
             <button type="submit" disabled={loading}>
