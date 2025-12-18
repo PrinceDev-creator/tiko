@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 function VerifyPass() {
-    const { id } = useParams();
+    //const { id } = useParams();
     const [status, setStatus] = useState("Vérification en cours...");
     const [error, setError] = useState(null);
     const [response, setResponse] = useState(null);
@@ -39,7 +39,7 @@ function VerifyPass() {
                 console.error(error);
                 setError(error.message);
             });
-    }, [id]);
+    }, []);
 
 
     if (error) return <p>Error : {error}, Token : {token}, typeof : {typeof token}</p>;
