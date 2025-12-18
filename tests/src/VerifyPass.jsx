@@ -16,7 +16,7 @@ function VerifyPass() {
         //     return;
         // }
 
-        fetch(`https://192.168.1.196:3000/api/pass/verify-pass/6941cc25a8bee16d89d9cd26`, {
+        fetch("tiko-699g-1mkrk1hdm-princedev-creators-projects.vercel.app/apipass/verify-pass/6941cc25a8bee16d89d9cd26", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
