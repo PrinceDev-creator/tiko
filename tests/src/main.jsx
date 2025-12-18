@@ -10,9 +10,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App />} />
+        <Route path="/pass" element={<App />} />
         <Route path="/verify-pass/:id" element={<VerifyPass />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Login />} />
         <Route path="/scan" element={<QrScanner />} />
       </Routes>
     </BrowserRouter>
