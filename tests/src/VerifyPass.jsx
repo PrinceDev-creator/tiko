@@ -9,33 +9,36 @@ function VerifyPass() {
     const token = localStorage.getItem("token")
 
     useEffect(() => {
-        console.log('token : ', token)
-        // if (!token) {
-        //     setError("Utilisateur non authentifié");
-        //     return;
-        // }
+        if (!token) {
+            setError("Utilisateur non authentifié");
+            return;
+        }
 
-        fetch("https://intramuscular-angelena-subdendroid.ngrok-free.dev/api/pass/verify-pass/6941cc25a8bee16d89d9cd26", {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-                "Authorization": `Bearer ${token}`,
-            },
-        })
-            .then(res => res.json())
-            .then(data => {
-                setResponse(data);
-
-                if (data.success) {
-                    setStatus("✅ Pass valide");
-                } else {
-                    setStatus("❌ Pass invalide");
+        fetch(
+            `https://intramuscular-angelena-subdendroid.ngrok-free.dev/api/pass/verify-pass/6941cc25a8bee16d89d9cd26`,
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            }
+        )
+            .then(async (res) => {
+                if (!res.ok) {
+                    const text = await res.text();
+                    throw new Error(text || `Erreur ${res.status}`);
                 }
+                return res.json();
+            })
+            .then((data) => {
+                setResponse(data);
+                setStatus(data.success ? "✅ Pass valide" : "❌ Pass invalide");
             })
             .catch((error) => {
-                setError("Erreur serveur: ", error);
+                console.error(error);
+                setError(error.message);
             });
-    }, [id, token]);
+    }, [id]);
+
 
     if (error) return <p>Error : {error} *** Token : {token}</p>;
     if (!response) return <p>Chargement...</p>;
