@@ -21,7 +21,11 @@ const db = process.env.DB_NAME
 // app.set('view engine', 'ejs')
 // app.set('views', path.join(__dirname, 'views')) // Spécifier le dossier des vues
 
-mongoose.connect(`mongodb://${hostname}:${port}/${db}`)
+// mongoose.connect(`mongodb://${hostname}:${port}/${db}`)
+//     .then(() => console.log('Connexion à MongoDB réussie'))
+//     .catch((error) => console.log('Connexion à MongoDB échouée : ', error))
+
+mongoose.connect('mongodb://atlas-sql-69088410f2f3995cea074d8a-2vnqaq.a.query.mongodb.net/tiko_db?ssl=true&authSource=admin')
     .then(() => console.log('Connexion à MongoDB réussie'))
     .catch((error) => console.log('Connexion à MongoDB échouée : ', error))
 
