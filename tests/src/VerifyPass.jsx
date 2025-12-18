@@ -6,7 +6,7 @@ function VerifyPass() {
     const [status, setStatus] = useState("Vérification en cours...");
     const [error, setError] = useState(null);
     const [response, setResponse] = useState(null);
-
+    const token = localStorage.getItem("token")
 
     useEffect(() => {
         console.log('token : ', token)
@@ -14,8 +14,6 @@ function VerifyPass() {
         //     setError("Utilisateur non authentifié");
         //     return;
         // }
-
-        const token = localStorage.getItem("token")
 
         fetch("https://intramuscular-angelena-subdendroid.ngrok-free.dev/api/pass/verify-pass/6941cc25a8bee16d89d9cd26", {
             method: "GET",
