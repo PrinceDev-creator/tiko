@@ -14,6 +14,8 @@ function VerifyPass() {
             return;
         }
 
+        console.log("TOKEN VALUE:", token, typeof token);
+
         fetch(
             `https://intramuscular-angelena-subdendroid.ngrok-free.dev/api/pass/verify-pass/6941cc25a8bee16d89d9cd26`,
             {
@@ -40,7 +42,8 @@ function VerifyPass() {
     }, [id]);
 
 
-    if (error) return <p>Error : {error} *** Token : {token}</p>;
+    if (error) return <p>Error : {error}</p>;
+    if (token) return <p>Token : {token}, typeof : {typeof token}</p>
     if (!response) return <p>Chargement...</p>;
 
     return (
