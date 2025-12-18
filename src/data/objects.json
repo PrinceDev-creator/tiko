@@ -1,0 +1,46 @@
+[
+  {
+    "id": "fd07acfc-65a8-4f98-b14a-223f83790fc7",
+    "name": "Festival",
+    "description": "Incroyable festival",
+    "manufacturer": "Le Boss",
+    "productionDate": "2025-11-29",
+    "expiryDate": "2025-11-30",
+    "verificationUrl": "http://localhost:3000/verify/fd07acfc-65a8-4f98-b14a-223f83790fc7",
+    "createdAt": "2025-11-29T14:50:24.083Z",
+    "isValid": true
+  },
+  {
+    "id": "a2cef583-e6c0-44f0-a461-6829728d3d18",
+    "name": "Festival",
+    "description": "Incroyable festival",
+    "manufacturer": "Le Boss",
+    "productionDate": "2025-11-29",
+    "expiryDate": "2025-11-30",
+    "verificationUrl": "http://localhost:3000/verify/a2cef583-e6c0-44f0-a461-6829728d3d18",
+    "createdAt": "2025-11-29T14:52:11.524Z",
+    "isValid": true
+  },
+  {
+    "id": "92c98a79-966f-489b-b14a-11aaea469889",
+    "name": "Festival",
+    "description": "Incroyable Festival",
+    "manufacturer": "Le Boss",
+    "productionDate": "2025-11-29",
+    "expiryDate": "2025-11-30",
+    "verificationUrl": "http://localhost:3000/verify/92c98a79-966f-489b-b14a-11aaea469889",
+    "createdAt": "2025-11-29T15:08:02.909Z",
+    "isValid": true
+  },
+  {
+    "id": "8910f5a1-4275-429e-acce-d2091c275ec4",
+    "name": "Festival",
+    "description": "Incroyable festival",
+    "manufacturer": "Le Boss",
+    "productionDate": "2025-11-29",
+    "expiryDate": "2025-11-30",
+    "verificationUrl": "http://localhost:3000/verify/8910f5a1-4275-429e-acce-d2091c275ec4",
+    "createdAt": "2025-11-29T15:16:45.068Z",
+    "isValid": true
+  }
+]
