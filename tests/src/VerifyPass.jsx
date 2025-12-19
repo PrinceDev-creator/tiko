@@ -9,40 +9,43 @@ function VerifyPass() {
     const token = localStorage.getItem("token")
 
     useEffect(() => {
-        if (!token) {
-            setError("Utilisateur non authentifié");
-            return;
-        }
+        const verifyPass = async () => {
+            try {
+                if (!token) {
+                    setError("Utilisateur non authentifié");
+                    return;
+                }
 
-        console.log("TOKEN VALUE:", token, typeof token);
+                const res = await fetch(
+                    `https://intramuscular-angelena-subdendroid.ngrok-free.dev/api/pass/verify-pass/${id}`,
+                    {
+                        method: "POST",
+                        headers: {
+                            "Accept": "application/json",
+                            "Authorization": `Bearer ${token}`,
+                        },
+                    }
+                );
 
-        fetch(
-            `https://intramuscular-angelena-subdendroid.ngrok-free.dev/api/pass/verify-pass/${id}`,
-            {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${token}`,
-                },
-                //body: JSON.stringify()
-            }
-        )
-            .then(async (res) => {
                 if (!res.ok) {
                     const text = await res.text();
                     throw new Error(text || `Erreur ${res.status}`);
                 }
-                return res.json();
-            })
-            .then((data) => {
+
+                const data = await res.json();
+
                 setResponse(data);
                 setStatus(data.success ? "✅ Pass valide" : "❌ Pass invalide");
-            })
-            .catch((error) => {
-                console.error(error);
+
+            } catch (error) {
+                console.error("VerifyPass error:", error);
                 setError(error.message);
-            });
-    }, [id]);
+            }
+        };
+
+        verifyPass();
+    }, [id, token]);
+
 
 
     if (error) return <p>Error : {error}, Token : {token}, typeof : {typeof token}</p>;
