@@ -19,10 +19,12 @@ function VerifyPass() {
         fetch(
             `https://intramuscular-angelena-subdendroid.ngrok-free.dev/api/pass/verify-pass/${id}`,
             {
+                method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                     Authorization: `Bearer ${token}`,
                 },
+                //body: JSON.stringify()
             }
         )
             .then(async (res) => {
