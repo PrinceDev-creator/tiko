@@ -53,11 +53,11 @@ function VerifyPass() {
 
     return (
         <div>
-            <pre>Token : {token}</pre>
+            {/* <pre>Token : {token}</pre> */}
             <h2>{status}</h2>
 
             {/* DEBUG UNIQUEMENT */}
-            <pre>Response : {JSON.stringify(response, null, 2)}</pre>
+            {/* <pre>Response : {JSON.stringify(response, null, 2)}</pre> */}
         </div>
     );
 }
