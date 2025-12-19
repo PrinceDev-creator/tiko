@@ -27,15 +27,15 @@ function VerifyPass() {
                     }
                 );
 
-                if (!res.ok) {
-                    const text = await res.text();
-                    throw new Error(text || `Erreur ${res.status}`);
-                }
+                // if (!res.ok) {
+                //     const text = await res.text();
+                //     throw new Error(text || `Erreur ${res.status}`);
+                // }
 
-                const data = await res.json();
+                // const data = await res.json();
 
-                setResponse(data);
-                setStatus(data.success ? "✅ Pass valide" : "❌ Pass invalide");
+                setResponse(res);
+                setStatus(res.success ? "✅ Pass valide" : "❌ Pass invalide");
 
             } catch (error) {
                 console.error("VerifyPass error:", error);
