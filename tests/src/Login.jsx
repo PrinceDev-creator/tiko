@@ -19,7 +19,7 @@ function Login() {
 
         try {
             const response = await fetch(
-                "https://intramuscular-angelena-subdendroid.ngrok-free.dev/api/auth/login",
+                "https://tiko-1-z4eh.onrender.com/api/auth/login",
                 {
                     method: "POST",
                     headers: {
