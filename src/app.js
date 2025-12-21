@@ -10,6 +10,7 @@ const eventRoutes = require('./routes/event')
 const passInfosRoutes = require('./routes/passInfos')
 const passRoutes = require('./routes/pass')
 const paymentRoutes = require('./routes/paymentTest')
+const testRoutes = require('./routes/test')
 const path = require('path')
 
 const app = express()
@@ -45,6 +46,7 @@ app.use('/api/event', eventRoutes)
 app.use('/images', express.static(path.join(__dirname, 'images')))
 app.use('/api/pass-infos', passInfosRoutes)
 app.use('/api/pass', passRoutes)
+app.use('api/test', testRoutes)
 app.use('/api/payment/verify', paymentRoutes)
 
 
