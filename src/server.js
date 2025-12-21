@@ -2,13 +2,18 @@ require('dotenv').config()
 
 const app = require('./app')
 const http = require('http')
-const HOSTNAME = "localhost"
 
-app.set('port', process.env.PORT || 3000)
+const HOSTNAME = "0.0.0.0"
+const PORT = process.env.PORT || 3000
+
+app.set('port', PORT)
 
 const server = http.createServer(app)
-console.log('hostname: ', HOSTNAME)
-server.listen(process.env.PORT || 3000, HOSTNAME)
+
+server.listen(PORT, HOSTNAME, () => {
+    console.log(`Server running on http://${HOSTNAME}:${PORT}`)
+})
+
 
 // require('dotenv').config();
 
