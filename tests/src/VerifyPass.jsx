@@ -17,7 +17,7 @@ function VerifyPass() {
                 }
 
                 const res = await fetch(
-                    `https://intramuscular-angelena-subdendroid.ngrok-free.dev/api/pass/verify-pass/${id}`,
+                    `https://tiko-1-z4eh.onrender.com/api/pass/verify-pass/${id}`,
                     {
                         method: "POST",
                         headers: {
