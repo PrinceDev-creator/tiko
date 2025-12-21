@@ -46,7 +46,7 @@ app.use('/api/event', eventRoutes)
 app.use('/images', express.static(path.join(__dirname, 'images')))
 app.use('/api/pass-infos', passInfosRoutes)
 app.use('/api/pass', passRoutes)
-app.use('api/test', testRoutes)
+app.use('/api/test', testRoutes)
 app.use('/api/payment/verify', paymentRoutes)
 
 
