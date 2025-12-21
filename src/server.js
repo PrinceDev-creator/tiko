@@ -1,13 +1,14 @@
-// require('dotenv').config()
+require('dotenv').config()
 
-// const app = require('./app')
-// const http = require('http')
-// const HOSTNAME = "192.168.1.196"
+const app = require('./app')
+const http = require('http')
+const HOSTNAME = "localhost"
 
-// app.set('port', process.env.PORT || 3000)
+app.set('port', process.env.PORT || 3000)
 
-// const server = http.createServer(app)
-// server.listen(process.env.PORT || 3000, HOSTNAME)
+const server = http.createServer(app)
+console.log('hostname: ', HOSTNAME)
+server.listen(process.env.PORT || 3000, HOSTNAME)
 
 // require('dotenv').config();
 
