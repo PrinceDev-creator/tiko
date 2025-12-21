@@ -5,7 +5,7 @@ const token = localStorage.getItem("token")
 function App() {
     return (
         <div style={styles.container}>
-            <pre>Token: {token}</pre>
+            {/* <pre>Token: {token}</pre> */}
             {/* <QRCodeCanvas
                 value={`${window.location.origin}/verify-pass/${passId}`}
                 size={250}
