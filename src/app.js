@@ -22,7 +22,7 @@ const db = process.env.DB_NAME
 // app.set('view engine', 'ejs')
 // app.set('views', path.join(__dirname, 'views')) // Spécifier le dossier des vues
 
-mongoose.connect(`mongodb://${hostname}:${port}/${db}`)
+mongoose.connect("mongodb+srv://grubfan67_db_user:8ViLWsSzP9xHuxHe@cluster0.1cwd0q5.mongodb.net/?appName=Cluster0")
     .then(() => console.log('Connexion à MongoDB réussie'))
     .catch((error) => console.log('Connexion à MongoDB échouée : ', error))
 
