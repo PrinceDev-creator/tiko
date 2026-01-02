@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { response } from "../../../../src/app";
-import Login from "./Login";
-import { firstConnection, setFirstConnection } from "../../datas/sharingDatas";
+import { setFirstConnection } from "../../datas/sharingDatas";
 import Input from "../Form";
+import { useNavigate } from "react-router-dom";
 import "../styles/form.css"
 
 function SignUp() {
@@ -10,6 +9,7 @@ function SignUp() {
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null)
+    const navigate = useNavigate()
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -32,7 +32,7 @@ function SignUp() {
                 throw new Error("Identifiants invalide")
             }
 
-            if (response.status == 200) {
+            if (response.status == 201) {
                 setFirstConnection(true)
                 navigate("/login");
             }
@@ -45,26 +45,26 @@ function SignUp() {
     }
 
     return (
-        <Fragment>
-            <form onSubmit={handleSubmit} className="form-container">
-                <Input
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Email"
-                />
+        <form onSubmit={handleSubmit} className="form-container">
+            <Input
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Email"
+            />
 
-                <Input
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    placeholder="Mot de passe"
-                />
+            <Input
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Mot de passe"
+            />
 
-                <Button disabled={loading}>
-                    {loading ? "Connexion..." : "Se connecter"}
-                </Button>
+            {error && <p className="error">{error}</p>}
 
-            </form>
-        </Fragment>
+            <Button disabled={loading}>
+                {loading ? "Inscription..." : "S'inscrire"}
+            </Button>
+
+        </form>
     )
 
 }
