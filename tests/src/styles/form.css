@@ -1,5 +1,5 @@
 /* Conteneur du formulaire */
-.form-container {
+/* .form-container {
     max-width: 360px;
     margin: 80px auto;
     padding: 24px;
@@ -8,7 +8,6 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-/* Champs de saisie */
 .form-container input {
     width: 100%;
     padding: 12px 14px;
@@ -20,14 +19,24 @@
     transition: border-color 0.2s ease;
 }
 
-/* Focus */
 .form-container input:focus {
     border-color: #2563eb;
 }
 
-/* Placeholder */
 .form-container input::placeholder {
     color: #9ca3af;
+} */
+
+.form {
+    max-width: 300px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1)
 }
 
 .error {
