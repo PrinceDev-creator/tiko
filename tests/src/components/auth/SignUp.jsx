@@ -47,7 +47,10 @@ function SignUp() {
     }
 
     return (
-        <form onSubmit={handleSubmit} className="form-container">
+        <form onSubmit={handleSubmit} className="form">
+
+            <h2>Inscription</h2>
+
             <Input
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
