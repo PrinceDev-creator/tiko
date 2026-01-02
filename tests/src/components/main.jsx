@@ -3,7 +3,8 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from "./App";
 import VerifyPass from "./VerifyPass";
-import Login from "./Login";
+import Login from "./auth/Login";
+import SignUp from "./auth/SignUp";
 import QrScanner from "./QrScanner";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -13,6 +14,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/pass" element={<App />} />
         <Route path="/verify-pass/:id" element={<VerifyPass />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />}></Route>
         <Route path="/scan" element={<QrScanner />} />
       </Routes>
     </BrowserRouter>
