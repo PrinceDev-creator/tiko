@@ -1,11 +1,10 @@
-function Input({ ...props }) {
+function Input({ className, ...props }) {
     return (
         <input
             className={className}
             type="text"
-            placeholder={placeholder}
-            value={value}
-            onChange={onChange}
+            {...props}
+            required
         />
     )
 }
