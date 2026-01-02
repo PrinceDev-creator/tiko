@@ -2,7 +2,7 @@ import { useState } from "react";
 import { setFirstConnection } from "../../datas/sharingDatas";
 import Input from "../Form";
 import { useNavigate } from "react-router-dom";
-import "../styles/form.css"
+import "../../styles/form.css"
 
 function SignUp() {
     const [email, setEmail] = useState("");

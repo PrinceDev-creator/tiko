@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { firstConnection, setFirstConnection } from "../../datas/sharingDatas";
-import "../styles/form.css"
+import "../../styles/form.css"
 //import { Fragment } from "react"
 
 function Login() {
