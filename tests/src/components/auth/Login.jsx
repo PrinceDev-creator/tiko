@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { firstConnection, setFirstConnection } from "../../datas/sharingDatas";
+import { useLocation } from "react-router-dom";
 import "../../styles/form.css"
 //import { Fragment } from "react"
 
 function Login() {
     const navigate = useNavigate();
+    const { state } = useLocation();
+    const firstConnection = state?.firstConnection;
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { setFirstConnection } from "../../datas/sharingDatas";
 import Input from "../Form";
+import Button from "../Button";
 import { useNavigate } from "react-router-dom";
 import "../../styles/form.css"
 
@@ -32,9 +32,11 @@ function SignUp() {
                 throw new Error("Identifiants invalide")
             }
 
-            if (response.status == 201) {
+            if (response.status === 201) {
                 setFirstConnection(true)
-                navigate("/login");
+                navigate("/login", {
+                    state: { firstConnection: true }
+                });
             }
 
         } catch (error) {
