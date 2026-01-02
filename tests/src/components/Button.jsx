@@ -1,6 +1,6 @@
-function Button({ loading, children }) {
+function Button({ loading, onClick, children }) {
     return (
-        <button type="submit" disabled={loading}>{children}</button>
+        <button type="submit" onClick={onClick} disabled={loading}>{children}</button>
     )
 }
 
