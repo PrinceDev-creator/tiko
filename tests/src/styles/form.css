@@ -1,0 +1,31 @@
+/* Conteneur du formulaire */
+.form-container {
+    max-width: 360px;
+    margin: 80px auto;
+    padding: 24px;
+    background-color: #ffffff;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Champs de saisie */
+.form-container input {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+/* Focus */
+.form-container input:focus {
+    border-color: #2563eb;
+}
+
+/* Placeholder */
+.form-container input::placeholder {
+    color: #9ca3af;
+}
