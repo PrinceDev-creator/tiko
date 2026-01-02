@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import Input from "../Form";
 import "../../styles/form.css"
 //import { Fragment } from "react"
 
@@ -76,7 +77,7 @@ function Login() {
         <form onSubmit={handleSubmit} style={styles.form}>
             <h2>Connexion</h2>
 
-            <input
+            <Input
                 type="email"
                 placeholder="Email"
                 value={email}
@@ -84,7 +85,7 @@ function Login() {
                 required
             />
 
-            <input
+            <Input
                 type="password"
                 placeholder="Mot de passe"
                 value={password}

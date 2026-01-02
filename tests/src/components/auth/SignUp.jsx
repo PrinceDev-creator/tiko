@@ -52,12 +52,14 @@ function SignUp() {
             <h2>Inscription</h2>
 
             <Input
+                type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email"
             />
 
             <Input
+                type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Mot de passe"
