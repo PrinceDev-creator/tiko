@@ -13,6 +13,7 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "@auth/express": "^0.12.1",
     "@kkiapay-org/nodejs-sdk": "^1.0.7",
     "bcrypt": "^6.0.0",
     "dotenv": "^17.2.3",
