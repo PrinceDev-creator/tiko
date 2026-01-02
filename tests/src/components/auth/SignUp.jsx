@@ -60,7 +60,7 @@ function SignUp() {
 
             {error && <p className="error">{error}</p>}
 
-            <Button disabled={loading}>
+            <Button type="submit" disabled={loading}>
                 {loading ? "Inscription..." : "S'inscrire"}
             </Button>
 
