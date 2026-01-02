@@ -46,7 +46,7 @@ function SignUp() {
 
     return (
         <Fragment>
-            <form action="submit" className="form-container">
+            <form onSubmit={handleSubmit} className="form-container">
                 <Input
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
