@@ -1,8 +1,8 @@
-function Input({ className, ...props }) {
+function Input({ className, type = "text", ...props }) {
     return (
         <input
             className={className}
-            type="text"
+            type={type}
             {...props}
             required
         />
