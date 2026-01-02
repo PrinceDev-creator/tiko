@@ -29,3 +29,8 @@
 .form-container input::placeholder {
     color: #9ca3af;
 }
+
+.error {
+    color: red;
+    font-size: 14px;
+}
