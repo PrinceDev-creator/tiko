@@ -12,7 +12,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Routes>
         <Route path="/pass" element={<App />} />
         <Route path="/verify-pass/:id" element={<VerifyPass />} />
-        <Route path="/" element={<Login />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/scan" element={<QrScanner />} />
       </Routes>
     </BrowserRouter>
