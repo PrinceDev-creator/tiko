@@ -33,7 +33,7 @@ function SignUp() {
                 throw new Error("Identifiants invalide")
             }
 
-            if (response.status === 201) {
+            if (response.status === 200) {
                 setEmail("")
                 setPassword("")
                 navigate("/login", {
