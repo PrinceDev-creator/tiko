@@ -71,7 +71,7 @@ function SignUp() {
             {error && <p className="error">{error}</p>}
 
             {loading
-                ? <Loader />
+                ? <DotsLoader />
                 : <Button type="submit" disabled={loading}>
                     S'inscrire
                 </Button>

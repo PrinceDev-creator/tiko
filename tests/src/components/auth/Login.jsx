@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 import Input from "../Form";
 import "../../styles/form.css";
 import "../../styles/welcome.css"
+import DotsLoader from "../Loader";
 //import { Fragment } from "react"
 
 function Login() {
@@ -109,7 +110,7 @@ function Login() {
                 {error && <p style={styles.error}>{error}</p>}
 
                 {loading
-                    ? <Loader />
+                    ? <DotsLoader />
                     : <Button type="submit" disabled={loading}>
                         Se connecter
                     </Button>
