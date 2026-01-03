@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 import Input from "../Form";
 import Button from "../Button";
 import DotsLoader from "../DotsLoader";
+import { Link } from "react-router-dom";
 import "../../styles/form.css";
 import "../../styles/welcome.css"
 //import { Fragment } from "react"
@@ -118,6 +119,13 @@ function Login() {
                 }
 
             </form>
+
+            <div></div>
+            <div></div>
+            <div></div>
+            <div>
+                <Link to="/signup">Créer un compte</Link>
+            </div>
         </>
     )
 
