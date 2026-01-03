@@ -36,7 +36,6 @@ function SignUp() {
             if (response.status === 201) {
                 setEmail("")
                 setPassword("")
-                setFirstConnection(true)
                 navigate("/login", {
                     state: { firstConnection: true }
                 });
