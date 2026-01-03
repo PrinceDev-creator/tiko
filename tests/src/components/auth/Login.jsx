@@ -123,9 +123,10 @@ function Login() {
             <div></div>
             <div></div>
             <div></div>
-            <div>
+            <div className="center-link">
                 <Link to="/signup">Créer un compte</Link>
             </div>
+
         </>
     )
 
