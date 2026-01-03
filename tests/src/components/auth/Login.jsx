@@ -2,7 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import Input from "../Form";
-import "../../styles/form.css"
+import "../../styles/welcome.css";
+import "../../styles/form.css";
 //import { Fragment } from "react"
 
 function Login() {
@@ -74,46 +75,47 @@ function Login() {
 
 
     return (
-        <form onSubmit={handleSubmit} classname="form">
-            <h2>Connexion</h2>
+        <>
+            {firstConnection && (
+                <div className="welcome-banner">
+                    <span className="emoji">🎉</span>
+                    <span className="text">
+                        Bienvenue sur la plateforme !
+                    </span>
+                    <span className="emoji">✨</span>
+                </div>
+            )}
 
-            <Input
-                type="email"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-            />
+            <form onSubmit={handleSubmit} className="form">
+                <h2>Connexion</h2>
 
-            <Input
-                type="password"
-                placeholder="Mot de passe"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-            />
+                <Input
+                    type="email"
+                    placeholder="Email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                />
 
-            {/* <p>Response : {response}</p> */}
-            {error && <p style={styles.error}>{error}</p>}
+                <Input
+                    type="password"
+                    placeholder="Mot de passe"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                />
 
-            <button type="submit" disabled={loading}>
-                {loading ? "Connexion..." : "Se connecter"}
-            </button>
-        </form>
-    );
+                {/* <p>Response : {response}</p> */}
+                {error && <p style={styles.error}>{error}</p>}
+
+                <button type="submit" disabled={loading}>
+                    {loading ? "Connexion..." : "Se connecter"}
+                </button>
+            </form>
+        </>
+    )
+
 }
 
 export default Login;
-
-
-
-
-
-// function Login() {
-//     return <Fragment>
-//         <div>Bonjour</div>
-//     </Fragment>
-// }
-
-// export default Login
 
