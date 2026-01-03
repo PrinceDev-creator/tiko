@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Input from "../Form";
 import Button from "../Button";
+import DotsLoader from "../Loader";
 import { useNavigate } from "react-router-dom";
 import "../../styles/form.css"
 
@@ -33,6 +34,8 @@ function SignUp() {
             }
 
             if (response.status === 201) {
+                setEmail("")
+                setPassword("")
                 setFirstConnection(true)
                 navigate("/login", {
                     state: { firstConnection: true }
@@ -67,9 +70,12 @@ function SignUp() {
 
             {error && <p className="error">{error}</p>}
 
-            <Button type="submit" disabled={loading}>
-                {loading ? "Inscription..." : "S'inscrire"}
-            </Button>
+            {loading
+                ? <Loader />
+                : <Button type="submit" disabled={loading}>
+                    S'inscrire
+                </Button>
+            }
 
         </form>
     )

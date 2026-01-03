@@ -55,23 +55,23 @@ function Login() {
         }
     };
 
-    const styles = {
-        form: {
-            maxWidth: "300px",
-            margin: "50px auto",
-            display: "flex",
-            flexDirection: "column",
-            gap: "10px",
-            padding: "20px",
-            border: "1px solid #ccc",
-            borderRadius: "8px",
-            boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
-        },
-        error: {
-            color: "red",
-            fontSize: "14px",
-        },
-    };
+    // const styles = {
+    //     form: {
+    //         maxWidth: "300px",
+    //         margin: "50px auto",
+    //         display: "flex",
+    //         flexDirection: "column",
+    //         gap: "10px",
+    //         padding: "20px",
+    //         border: "1px solid #ccc",
+    //         borderRadius: "8px",
+    //         boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+    //     },
+    //     error: {
+    //         color: "red",
+    //         fontSize: "14px",
+    //     },
+    // };
 
 
     return (
@@ -108,9 +108,13 @@ function Login() {
                 {/* <p>Response : {response}</p> */}
                 {error && <p style={styles.error}>{error}</p>}
 
-                <button type="submit" disabled={loading}>
-                    {loading ? "Connexion..." : "Se connecter"}
-                </button>
+                {loading
+                    ? <Loader />
+                    : <Button type="submit" disabled={loading}>
+                        Se connecter
+                    </Button>
+                }
+
             </form>
         </>
     )
