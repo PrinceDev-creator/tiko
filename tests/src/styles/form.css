@@ -43,3 +43,9 @@
     color: red;
     font-size: 14px;
 }
+
+.center-link {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
