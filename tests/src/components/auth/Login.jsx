@@ -74,7 +74,7 @@ function Login() {
 
 
     return (
-        <form onSubmit={handleSubmit} style={styles.form}>
+        <form onSubmit={handleSubmit} classname="form">
             <h2>Connexion</h2>
 
             <Input
