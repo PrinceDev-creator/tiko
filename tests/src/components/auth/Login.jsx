@@ -2,9 +2,10 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import Input from "../Form";
+import Button from "../Button";
+import DotsLoader from "../DotsLoader";
 import "../../styles/form.css";
 import "../../styles/welcome.css"
-import DotsLoader from "../DotsLoader";
 //import { Fragment } from "react"
 
 function Login() {
@@ -107,7 +108,7 @@ function Login() {
                 />
 
                 {/* <p>Response : {response}</p> */}
-                {error && <p style={styles.error}>{error}</p>}
+                {error && <p className="error">{error}</p>}
 
                 {loading
                     ? <DotsLoader />
