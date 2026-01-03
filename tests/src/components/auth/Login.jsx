@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import Input from "../Form";
 import "../../styles/form.css";
 import "../../styles/welcome.css"
-import DotsLoader from "../Loader";
+import DotsLoader from "../DotsLoader";
 //import { Fragment } from "react"
 
 function Login() {

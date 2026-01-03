@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Input from "../Form";
 import Button from "../Button";
-import DotsLoader from "../Loader";
+import DotsLoader from "../DotsLoader";
 import { useNavigate } from "react-router-dom";
 import "../../styles/form.css"
 
