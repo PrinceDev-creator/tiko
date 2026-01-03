@@ -82,7 +82,7 @@ function Login() {
                 <div className="welcome-banner">
                     <span className="emoji">🎉</span>
                     <span className="text">
-                        Bienvenue sur la plateforme !
+                        Bienvenue sur Tiko !
                     </span>
                     <span className="emoji">✨</span>
                 </div>
