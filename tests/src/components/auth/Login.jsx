@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import Input from "../Form";
 import "../../styles/form.css";
+import "../../styles/welcome.css"
 //import { Fragment } from "react"
 
 function Login() {
