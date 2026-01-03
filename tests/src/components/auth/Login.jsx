@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import Input from "../Form";
-import "../../styles/welcome.css";
 import "../../styles/form.css";
 //import { Fragment } from "react"
 
